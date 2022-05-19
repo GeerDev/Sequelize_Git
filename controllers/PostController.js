@@ -49,14 +49,7 @@ const PostController = {
         });
       });
   },
-  async delete(req, res) {
-    await Post.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.send("La publicación ha sido eliminada con éxito");
-  },
+  
 };
 
 module.exports = PostController;

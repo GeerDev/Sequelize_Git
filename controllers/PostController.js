@@ -4,7 +4,7 @@ const PostController = {
   create(req, res) {
     Post.create({ ...req.body })
       .then((post) =>
-        res.status(201).send({ message: "Publicación creada con éxito", post })
+        res.status(201).send({ message: "Publicación creada con mucho éxito", post })
       )
       .catch(console.error);
   },

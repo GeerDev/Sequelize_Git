@@ -4,7 +4,7 @@ const PostController = {
   create(req, res) {
     Post.create({ ...req.body })
       .then((post) =>
-        res.status(201).send({ message: "Publicación creada con éxito", post })
+        res.status(201).send({ message: "Publicación creada o no??????", post })
       )
       .catch(console.error);
   },
@@ -48,6 +48,14 @@ const PostController = {
           message: "Ha habido un problema al cargar la publicación",
         });
       });
+  },
+  async delete(req, res) {
+    await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.send("La publicación ha sido eliminada con éxito");
   },
   
 };

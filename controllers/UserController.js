@@ -42,6 +42,18 @@ const UserController = {
       });
     }
   },
+  async update(req, res) {
+    await User.update(
+      { ...req.body },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.send("Usuario actualizado con éxito");
+  },
+  
 
 };
 
